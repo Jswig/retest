@@ -1,16 +1,11 @@
 import functools
-from typing import Callable, Union
 
+from ._types import TestFunc, TestRunner
 
-type TestFunc = Callable[[], None]
-type TestRunner = Callable[[], bool]
-
-_registered_tests: Union[list[TestRunner], None] = None
-
+_registered_tests: list[TestRunner] | None = None
 
 def test(func: TestFunc) -> TestRunner:
     """Decorator to define a test case to be executed by retest"""
-
     @functools.wraps(func)
     def run_test() -> bool:
         try:
@@ -22,13 +17,9 @@ def test(func: TestFunc) -> TestRunner:
     global _registered_tests
     if _registered_tests is None:
         _registered_tests = []
-
     _registered_tests.append(run_test)
     return run_test
 
 
-def run_tests() -> None:
-    global _registered_tests
-    if _registered_tests is not None:
-        for test in _registered_tests:
-            test()
+def get_registered_tests() -> list[TestRunner] | None:
+    return _registered_tests
