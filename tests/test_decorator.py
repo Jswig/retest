@@ -1,5 +1,6 @@
 from retest._decorator import test, get_registered_tests
 
+from helpers import execute_test_cases
 
 def run_defined_test_passing() -> None:
     @test
@@ -44,10 +45,4 @@ if __name__ == "__main__":
         run_defined_test_passing,
         run_defined_test_failing,
     ]
-    print(f"Running tests from {__file__}")
-    for t in all_tests:
-        try:
-            t()
-            print(f"Passed {t.__name__}")
-        except AssertionError:
-            print(f"Failed {t.__name__}")
+    execute_test_cases(all_tests)
