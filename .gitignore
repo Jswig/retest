@@ -9,6 +9,6 @@ wheels/
 # Virtual environments
 .venv
 
-# Loack files
+# Lock files
 # do not version lockfile for now
 uv.lock
