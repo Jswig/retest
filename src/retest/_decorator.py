@@ -4,8 +4,10 @@ from ._types import TestFunc, TestRunner
 
 _registered_tests: list[TestRunner] | None = None
 
+
 def test(func: TestFunc) -> TestRunner:
-    """Decorator to define a test case to be executed by retest"""
+    """Registers a function as a test function to be executed by retest"""
+
     @functools.wraps(func)
     def run_test() -> bool:
         try:
