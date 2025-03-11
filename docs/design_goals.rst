@@ -33,8 +33,7 @@ Orthorgonal
 
 Features do not overlap. Users do not have to choose which feature to employ, it should
 always be obvious what is the correct one. ``retest`` leans on the standard library
-as much as possible, avoiding re-implementing or exposing alternate entrypoints into
-standard library features.
+as much as possible.
 
 Self-contained
 --------------
