@@ -1,13 +1,13 @@
 [project]
 name = "retest"
-version = "0.1.0"
-description = "Testing simplified"
+description = "Python testing for humans"
 readme = "README.md"
 authors = [
     { name = "Anders Poirel", email = "contact@anderspoirel.net"}
 ]
-requires-python = ">=3.10"
+requires-python = ">=3.9"
 dependencies = []
+dynamic = ["version"]
 
 [project.scripts]
 retest = "retest:main"
