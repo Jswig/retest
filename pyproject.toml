@@ -23,7 +23,7 @@ dev = [
 ]
 
 [tool.mypy]
-strict = True
+strict = true
 
 [tool.ruff]
 line-length = 88
