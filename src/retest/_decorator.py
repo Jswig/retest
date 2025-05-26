@@ -10,5 +10,4 @@ def test(_registry: Registry = global_registry) -> Callable[[TestFunc], TestFunc
     def decorate(func: TestFunc) -> TestFunc:
         _registry.add(func)
         return func
-
     return decorate
